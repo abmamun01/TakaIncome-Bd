@@ -13,6 +13,7 @@ import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QuerySnapshot;
 import com.nooneprojects.takaincome_bd.Model.Question;
+import com.unity3d.ads.UnityAds;
 
 import java.util.ArrayList;
 import java.util.Random;
@@ -28,11 +29,19 @@ public class QuizAcitivity extends AppCompatActivity {
     FirebaseFirestore database;
     int correctAnswers = 0;
 
+    private String GameId = "4365542";
+    private String bannerAdsId = "Banner_Android";
+    private String interstitialAdsId = "Interstitial_Android";
+    private String rewardedAds = "Rewarded_Android";
+    private boolean testMode = true;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_quiz_acitivity);
+
+        UnityAds.initialize(QuizAcitivity.this, GameId, testMode);
 
 
         timerText = findViewById(R.id.timer);
@@ -49,11 +58,9 @@ public class QuizAcitivity extends AppCompatActivity {
 
 
         Random random = new Random();
-        final int rand = random.nextInt(12);
+        final int rand = random.nextInt(8);
 
         database.collection(Common.COLLECTION_QUIZ)
-                .document()
-                .collection("questions")
                 .whereGreaterThanOrEqualTo("index", rand)
                 .orderBy("index")
                 .limit(5).get().addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
@@ -61,8 +68,6 @@ public class QuizAcitivity extends AppCompatActivity {
             public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
                 if (queryDocumentSnapshots.getDocuments().size() < 5) {
                     database.collection(Common.COLLECTION_QUIZ)
-                            .document()
-                            .collection("questions")
                             .whereLessThanOrEqualTo("index", rand)
                             .orderBy("index")
                             .limit(5).get().addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
@@ -162,10 +167,14 @@ public class QuizAcitivity extends AppCompatActivity {
 
                 break;
             case R.id.nextBtn:
+
+                displayInterstitialAds();
+
                 reset();
                 if (index <= questions.size()) {
                     index++;
                     setNextQuestion();
+
                 } else {
                     Intent intent = new Intent(QuizAcitivity.this, ResultActivity.class);
                     intent.putExtra("correct", correctAnswers);
@@ -175,5 +184,13 @@ public class QuizAcitivity extends AppCompatActivity {
                 }
                 break;
         }
+    }
+
+
+    private void displayInterstitialAds() {
+        if (UnityAds.isReady(interstitialAdsId)) {
+            UnityAds.show(QuizAcitivity.this, interstitialAdsId);
+        }
+        
     }
 }

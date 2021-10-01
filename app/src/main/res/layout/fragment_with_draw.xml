@@ -40,7 +40,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="36dp"
                 android:fontFamily="@font/poppins"
-                android:text="My Balance"
+                android:text="সর্বমোট টাকা"
                 android:textSize="@dimen/_17font_mdp"
                 android:textColor="@color/white"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -83,19 +83,28 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
 
 
-        <EditText
-            android:id="@+id/withdraw_phone_number_id"
+
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="@dimen/_13mdp"
-            android:layout_marginStart="@dimen/_12mdp"
-            android:layout_marginTop="@dimen/_12mdp"
-            android:layout_marginEnd="@dimen/_12mdp"
-            android:layout_marginBottom="@dimen/_12mdp"
-            android:background="@drawable/edit_text_bg"
-            android:hint="@string/bkash_nagad"
-            android:inputType="phone"
-            android:padding="@dimen/_9mdp" />
+            android:layout_height="wrap_content">
+
+
+            <EditText
+                android:id="@+id/withdraw_phone_number_id"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_13mdp"
+                android:layout_marginTop="@dimen/_13mdp"
+                android:layout_marginEnd="@dimen/_13mdp"
+                android:layout_marginBottom="@dimen/_13mdp"
+                android:background="@drawable/edit_text_bg"
+                android:hint="@string/bkash_nagad"
+                android:inputType="phone"
+                android:keepScreenOn="true"
+                android:padding="@dimen/_9mdp" />
+
+
+        </RelativeLayout>
 
 
 

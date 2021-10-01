@@ -54,7 +54,7 @@ public class Home_Fragment extends Fragment {
 
     RelativeLayout quiz_button;
 
-    ConstraintLayout watch_ads_btn;
+    ConstraintLayout watch_ads_btn, small_ads_button;
     TextView userPoints, user_name;
 
 
@@ -66,6 +66,7 @@ public class Home_Fragment extends Fragment {
 
 
         watch_ads_btn = view.findViewById(R.id.watch_ads_id);
+        small_ads_button = view.findViewById(R.id.small_watch_ads_id);
         userPoints = view.findViewById(R.id.user_points);
         user_name = view.findViewById(R.id.user_name);
         quiz_button = view.findViewById(R.id.quiz_button);
@@ -74,9 +75,97 @@ public class Home_Fragment extends Fragment {
         getUserPoints();
 
         watch_ads_btn.setOnClickListener(view1 -> {
+
+
+            IUnityAdsListener unityAdsListener = new IUnityAdsListener() {
+                @Override
+                public void onUnityAdsReady(String s) {
+
+                    Log.d("UNITYADSLISTENER", "onUnityAdsReady: ");
+                }
+
+                @Override
+                public void onUnityAdsStart(String s) {
+
+                    Log.d("UNITYADSLISTENER", "onUnityAdsStart: ");
+
+                }
+
+                @Override
+                public void onUnityAdsFinish(String s, UnityAds.FinishState finishState) {
+                    Log.d("UNITYADSLISTENER", "onUnityAdsFinish: ");
+
+                    firebaseFirestore
+                            .collection(Common.COLLECTION_NAME)
+                            .document(FirebaseAuth.getInstance().getCurrentUser().getUid())
+                            .update("coin", FieldValue.increment(10)).addOnCompleteListener(new OnCompleteListener<Void>() {
+                        @Override
+                        public void onComplete(@NonNull Task<Void> task) {
+
+                            // toastIconSuccess("10 Coins Added");
+
+                            Toast.makeText(activity, "10 Coins Added", Toast.LENGTH_SHORT).show();
+                        }
+
+                    });
+                }
+
+                @Override
+                public void onUnityAdsError(UnityAds.UnityAdsError unityAdsError, String s) {
+
+                    Log.d("UNITYADSLISTENER", "onUnityAdsError: ");
+
+                }
+            };
+            UnityAds.setListener(unityAdsListener);
             displayRewardedVideoAd();
         });
 
+        small_ads_button.setOnClickListener(view1 -> {
+
+            IUnityAdsListener unityAdsListener = new IUnityAdsListener() {
+                @Override
+                public void onUnityAdsReady(String s) {
+
+                    Log.d("UNITYADSLISTENER", "onUnityAdsReady: ");
+                }
+
+                @Override
+                public void onUnityAdsStart(String s) {
+
+                    Log.d("UNITYADSLISTENER", "onUnityAdsStart: ");
+
+                }
+
+                @Override
+                public void onUnityAdsFinish(String s, UnityAds.FinishState finishState) {
+                    Log.d("UNITYADSLISTENER", "onUnityAdsFinish: ");
+
+                    firebaseFirestore
+                            .collection(Common.COLLECTION_NAME)
+                            .document(FirebaseAuth.getInstance().getCurrentUser().getUid())
+                            .update("coin", FieldValue.increment(5)).addOnCompleteListener(new OnCompleteListener<Void>() {
+                        @Override
+                        public void onComplete(@NonNull Task<Void> task) {
+
+                            // toastIconSuccess("10 Coins Added");
+
+                            Toast.makeText(activity, "5 Coins Added", Toast.LENGTH_SHORT).show();
+                        }
+
+                    });
+                }
+
+                @Override
+                public void onUnityAdsError(UnityAds.UnityAdsError unityAdsError, String s) {
+
+                    Log.d("UNITYADSLISTENER", "onUnityAdsError: ");
+
+                }
+            };
+            UnityAds.setListener(unityAdsListener);
+            displayInterstitialAds();
+        });
 
         quiz_button.setOnClickListener(view1 -> {
 
@@ -92,47 +181,7 @@ public class Home_Fragment extends Fragment {
 
 
         //================UNITY ADS LISTENER====================
-        IUnityAdsListener unityAdsListener = new IUnityAdsListener() {
-            @Override
-            public void onUnityAdsReady(String s) {
 
-                Log.d("UNITYADSLISTENER", "onUnityAdsReady: ");
-            }
-
-            @Override
-            public void onUnityAdsStart(String s) {
-
-                Log.d("UNITYADSLISTENER", "onUnityAdsStart: ");
-
-            }
-
-            @Override
-            public void onUnityAdsFinish(String s, UnityAds.FinishState finishState) {
-                Log.d("UNITYADSLISTENER", "onUnityAdsFinish: ");
-
-                firebaseFirestore
-                        .collection(Common.COLLECTION_NAME)
-                        .document(FirebaseAuth.getInstance().getCurrentUser().getUid())
-                        .update("coin", FieldValue.increment(10)).addOnCompleteListener(new OnCompleteListener<Void>() {
-                    @Override
-                    public void onComplete(@NonNull Task<Void> task) {
-
-                        // toastIconSuccess("10 Coins Added");
-
-                        Toast.makeText(activity, "10 Coins Added", Toast.LENGTH_SHORT).show();
-                    }
-
-                });
-            }
-
-            @Override
-            public void onUnityAdsError(UnityAds.UnityAdsError unityAdsError, String s) {
-
-                Log.d("UNITYADSLISTENER", "onUnityAdsError: ");
-
-            }
-        };
-        UnityAds.setListener(unityAdsListener);
         //================UNITY ADS LISTENER====================
 
 
@@ -182,6 +231,11 @@ public class Home_Fragment extends Fragment {
         }
     }
 
+    private void displayInterstitialAds() {
+        if (UnityAds.isReady(interstitialAdsId)) {
+            UnityAds.show((Activity) getContext(), interstitialAdsId);
+        }
+    }
 
     private void getUserPoints() {
 
