@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">TakaIncome_BD</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="email_address_txt"><font size="12">Email Address!</font></string>
+    <string name="password_txt"><font size="12">Password</font></string>
+    <string name="phone_txt"><font size="12">Phone Number</font></string>
+    <string name="name_txt"><font size="12">Your Name</font></string>
+    <string name="bkash_nagad"><font size="12">বিকাশ বা নগদ</font></string>
+    <string name="title_activity_ssssd">SSSSD</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="menu_home">Home</string>
+    <string name="menu_gallery">Gallery</string>
+    <string name="menu_slideshow">Slideshow</string>
+</resources>

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Android Studio Projectss/TakaIncome_BD/app/src/main/res/drawable-v24/background_bottom.xml" value="0.3828125" />
+        <entry key="..\:/Android Studio Projectss/TakaIncome_BD/app/src/main/res/drawable-v24/button_2.xml" value="0.3828125" />
+        <entry key="..\:/Android Studio Projectss/TakaIncome_BD/app/src/main/res/drawable-v24/ic_question.xml" value="0.3828125" />
+        <entry key="..\:/Android Studio Projectss/TakaIncome_BD/app/src/main/res/drawable-v24/ic_timer.xml" value="0.3828125" />
+        <entry key="..\:/Android Studio Projectss/TakaIncome_BD/app/src/main/res/drawable-v24/option_unselected.xml" value="0.3828125" />
+        <entry key="..\:/Android Studio Projectss/TakaIncome_BD/app/src/main/res/drawable-v24/rounded_box.xml" value="0.3828125" />
+        <entry key="..\:/Android Studio Projectss/TakaIncome_BD/app/src/main/res/drawable/ads_bg.xml" value="1.667857142857143" />
+        <entry key="..\:/Android Studio Projectss/TakaIncome_BD/app/src/main/res/drawable/btn_rounded_red.xml" value="0.3828125" />
+        <entry key="..\:/Android Studio Projectss/TakaIncome_BD/app/src/main/res/drawable/common_knowledge_bg.xml" value="0.3828125" />
+        <entry key="..\:/Android Studio Projectss/TakaIncome_BD/app/src/main/res/drawable/edit_text_bg.xml" value="0.3828125" />
+        <entry key="..\:/Android Studio Projectss/TakaIncome_BD/app/src/main/res/drawable/game_bg.xml" value="0.3828125" />
+        <entry key="..\:/Android Studio Projectss/TakaIncome_BD/app/src/main/res/drawable/option_right.xml" value="0.3828125" />
+        <entry key="..\:/Android Studio Projectss/TakaIncome_BD/app/src/main/res/drawable/option_wrong.xml" value="0.22239583333333332" />
+        <entry key="..\:/Android Studio Projectss/TakaIncome_BD/app/src/main/res/drawable/redeemicon.xml" value="0.3828125" />
+        <entry key="..\:/Android Studio Projectss/TakaIncome_BD/app/src/main/res/drawable/ripple_effect.xml" value="0.21197916666666666" />
+        <entry key="..\:/Android Studio Projectss/TakaIncome_BD/app/src/main/res/drawable/ripple_effect_sign_in_btn.xml" value="0.3769230769230769" />
+        <entry key="..\:/Android Studio Projectss/TakaIncome_BD/app/src/main/res/drawable/round_ring.xml" value="0.3828125" />
+        <entry key="..\:/Android Studio Projectss/TakaIncome_BD/app/src/main/res/drawable/science_bg.xml" value="0.3828125" />
+        <entry key="..\:/Android Studio Projectss/TakaIncome_BD/app/src/main/res/drawable/sign_up_button_bg.xml" value="0.45703125" />
+        <entry key="..\:/Android Studio Projectss/TakaIncome_BD/app/src/main/res/drawable/sign_up_upper_bg.xml" value="0.3828125" />
+        <entry key="..\:/Android Studio Projectss/TakaIncome_BD/app/src/main/res/drawable/spin.xml" value="0.3828125" />
+        <entry key="..\:/Android Studio Projectss/TakaIncome_BD/app/src/main/res/drawable/up_layout.xml" value="0.3828125" />
+        <entry key="..\:/Android Studio Projectss/TakaIncome_BD/app/src/main/res/drawable/wallet_bg.xml" value="0.3769230769230769" />
+        <entry key="..\:/Android Studio Projectss/TakaIncome_BD/app/src/main/res/layout/activity_main.xml" value="0.18" />
+        <entry key="..\:/Android Studio Projectss/TakaIncome_BD/app/src/main/res/layout/activity_quiz_acitivity.xml" value="0.25" />
+        <entry key="..\:/Android Studio Projectss/TakaIncome_BD/app/src/main/res/layout/activity_result.xml" value="0.25" />
+        <entry key="..\:/Android Studio Projectss/TakaIncome_BD/app/src/main/res/layout/activity_sign_up.xml" value="0.33" />
+        <entry key="..\:/Android Studio Projectss/TakaIncome_BD/app/src/main/res/layout/dialog_warning.xml" value="0.36666666666666664" />
+        <entry key="..\:/Android Studio Projectss/TakaIncome_BD/app/src/main/res/layout/dialog_withdraw_warning.xml" value="0.36666666666666664" />
+        <entry key="..\:/Android Studio Projectss/TakaIncome_BD/app/src/main/res/layout/fragment_home_.xml" value="0.25" />
+        <entry key="..\:/Android Studio Projectss/TakaIncome_BD/app/src/main/res/layout/fragment_leader_board__fragments.xml" value="0.36666666666666664" />
+        <entry key="..\:/Android Studio Projectss/TakaIncome_BD/app/src/main/res/layout/fragment_post__feed_.xml" value="0.3625" />
+        <entry key="..\:/Android Studio Projectss/TakaIncome_BD/app/src/main/res/layout/fragment_sign_in__fragments.xml" value="0.35260416666666666" />
+        <entry key="..\:/Android Studio Projectss/TakaIncome_BD/app/src/main/res/layout/fragment_sign_up_.xml" value="0.36666666666666664" />
+        <entry key="..\:/Android Studio Projectss/TakaIncome_BD/app/src/main/res/layout/fragment_with_draw.xml" value="0.36666666666666664" />
+        <entry key="..\:/Android Studio Projectss/TakaIncome_BD/app/src/main/res/layout/item_category.xml" value="0.36666666666666664" />
+        <entry key="..\:/Android Studio Projectss/TakaIncome_BD/app/src/main/res/layout/layout_post.xml" value="0.33" />
+        <entry key="..\:/Android Studio Projectss/TakaIncome_BD/app/src/main/res/layout/leaderboard_layout.xml" value="0.36666666666666664" />
+        <entry key="..\:/Android Studio Projectss/TakaIncome_BD/app/src/main/res/layout/sing_in_layout.xml" value="0.36666666666666664" />
+        <entry key="..\:/Android Studio Projectss/TakaIncome_BD/app/src/main/res/layout/sing_up_layout.xml" value="0.36666666666666664" />
+        <entry key="..\:/Android Studio Projectss/TakaIncome_BD/app/src/main/res/layout/toast_icon_text.xml" value="0.1" />
+        <entry key="..\:/Android Studio Projectss/TakaIncome_BD/app/src/main/res/menu/bottom_nav_menu.xml" value="0.3625" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>
