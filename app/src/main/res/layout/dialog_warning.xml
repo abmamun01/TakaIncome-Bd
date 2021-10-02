@@ -17,8 +17,8 @@
 
         <ImageView
             android:id="@+id/icon"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
+            android:layout_width="@dimen/_50mdp"
+            android:layout_height="@dimen/_50mdp"
             app:srcCompat="@drawable/ic_vpn" />
 
         <com.uncopt.android.widget.text.justify.JustifiedTextView
@@ -26,7 +26,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/spacing_middle"
-            android:text="আপনাকে এই অ্যাপ টি ব্যাবহার করতে হলে অবশ্যই VPN ব্যাবহার করতে হবে নয়ত আপনি এই অ্যাপে কাজ করতে পারবেননা।"
+            android:textSize="@dimen/_11font_mdp"
+            android:text="আমাদের কাজগুলো সব আমেরিকা থেকে তাই আপনাকে এই অ্যাপ টি ব্যাবহার করতে হলে অবশ্যই VPN ব্যাবহার করতে হবে নয়ত আপনি এই অ্যাপে কাজ করতে পারবেননা।"
             android:textAppearance="@style/TextAppearance.AppCompat.Medium"
             android:textColor="@android:color/white"
             android:textStyle="bold" />

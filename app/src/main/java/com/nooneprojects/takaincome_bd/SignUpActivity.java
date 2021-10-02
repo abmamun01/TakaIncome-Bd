@@ -47,10 +47,8 @@ public class SignUpActivity extends AppCompatActivity {
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
 
-                if (tab.getId() == 0) {
+                viewPager.setCurrentItem(tab.getPosition());
 
-
-                }
             }
 
             @Override

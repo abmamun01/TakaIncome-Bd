@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -21,11 +22,17 @@ public class ResultActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_result);
 
+        setContentView(R.layout.activity_result);
+        scoreText = findViewById(R.id.score);
+
+
+        earnedCoinsText = findViewById(R.id.earnedCoins);
         int correctAnswers = getIntent().getIntExtra("correct", 0);
         int totalQuestions = getIntent().getIntExtra("total", 0);
 
+
+        Log.d("COCOOOC", "onCreate: " + correctAnswers + "   " + totalQuestions);
         long points = correctAnswers * POINTS;
 
         scoreText.setText(String.format("%d/%d", correctAnswers, totalQuestions));
@@ -37,7 +44,7 @@ public class ResultActivity extends AppCompatActivity {
                 .document(FirebaseAuth.getInstance().getUid())
                 .update("coin", FieldValue.increment(points));
 
-        restartBtn.setOnClickListener(new View.OnClickListener() {
+       findViewById(R.id.restartBtn).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(ResultActivity.this, MainActivity.class));

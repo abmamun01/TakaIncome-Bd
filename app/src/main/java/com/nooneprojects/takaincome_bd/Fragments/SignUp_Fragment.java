@@ -68,6 +68,8 @@ public class SignUp_Fragment extends Fragment {
 
         signUpBtn.setOnClickListener(view1 ->
         {
+
+            signUpBtn.setEnabled(false);
             firebaseAuth.createUserWithEmailAndPassword(emailET.getText().toString(), passwordET.getText().toString())
                     .addOnCompleteListener(task -> {
 

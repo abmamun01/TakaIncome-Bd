@@ -46,18 +46,17 @@ public class SignIn_Fragments extends Fragment {
 
         emailET = view.findViewById(R.id.emailID);
         passwordET = view.findViewById(R.id.passwordID);
-        signInBtn=view.findViewById(R.id.sign_btn_id);
+        signInBtn = view.findViewById(R.id.sign_btn_id);
 
 
         emailET.animate().translationX(0).alpha(1).setDuration(800).setStartDelay(300).start();
         passwordET.animate().translationX(0).alpha(1).setDuration(800).setStartDelay(500).start();
 
 
-
-
         signInBtn.setOnClickListener(view1 ->
         {
 
+            signInBtn.setEnabled(false);
             firebaseAuth.signInWithEmailAndPassword(emailET.getText().toString(), passwordET.getText().toString())
                     .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                         @Override

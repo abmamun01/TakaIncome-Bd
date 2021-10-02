@@ -62,7 +62,7 @@ public class MainActivity extends AppCompatActivity {
     private String bannerAdsId = "Banner_Android";
     private String interstitialAdsId = "Interstitial_Android";
     private String rewardedAds = "Rewarded_Android";
-    private boolean testMode = true;
+    private boolean testMode = false;
     int cash;
 
 
@@ -131,18 +131,7 @@ public class MainActivity extends AppCompatActivity {
 
         UnityAds.initialize(MainActivity.this, GameId, testMode);
 
-        getLocalIpAddress();
-        Log.d("IPADSSSSS", "onCreate: " + getLocalIpAddress());
 
-        String locale = MainActivity.this.getResources().getConfiguration().locale.getCountry();
-        Log.d("IPADSSSSS", "locale: " + locale);
-
-        TelephonyManager tm = (TelephonyManager) this.getSystemService(Context.TELEPHONY_SERVICE);
-        String countryCodeValue = tm.getNetworkCountryIso();
-        Log.d("IPADSSSSS", "TelephonyManager: " + countryCodeValue);
-
-
-        Log.d("IPADSSSSS", "onCreate: " + isVpnConnectionActive());
         //=========================================================================Interstitial Ads =============================================================================
 
         IUnityAdsListener unityAdsListener = new IUnityAdsListener() {
@@ -195,10 +184,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    private void earnCoins() {
-
-
-    }
 
     private void displayInterstitialAds() {
         if (UnityAds.isReady(interstitialAdsId)) {

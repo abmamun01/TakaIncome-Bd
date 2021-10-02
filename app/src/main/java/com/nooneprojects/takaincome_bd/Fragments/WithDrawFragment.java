@@ -78,7 +78,7 @@ public class WithDrawFragment extends Fragment {
                     if (!withdraw_phone_numberET.getText().toString().isEmpty()) {
 
                         assert user != null;
-                        if (user.getCoin() > 5000) {
+                        if (user.getCoin() > 10000) {
 
                             WithdrawModel withdrawModel = new WithdrawModel();
                             withdrawModel.setUid(FirebaseAuth.getInstance().getUid());
@@ -93,7 +93,7 @@ public class WithDrawFragment extends Fragment {
                                 @Override
                                 public void onComplete(@NonNull Task<Void> task) {
 
-                                    decrementUserCoins(5000);
+                                    decrementUserCoins(10000);
 
                                     SweetAlertDialog pDialog = new SweetAlertDialog(getActivity(), SweetAlertDialog.SUCCESS_TYPE);
                                     pDialog.getProgressHelper().setBarColor(Color.parseColor("#A5DC86"));
@@ -148,7 +148,7 @@ public class WithDrawFragment extends Fragment {
                     if (!withdraw_phone_numberET.getText().toString().isEmpty()) {
 
                         assert user != null;
-                        if (user.getCoin() > 10000) {
+                        if (user.getCoin() > 20000) {
 
                             WithdrawModel withdrawModel = new WithdrawModel();
                             withdrawModel.setUid(FirebaseAuth.getInstance().getUid());
@@ -163,7 +163,7 @@ public class WithDrawFragment extends Fragment {
                                 @Override
                                 public void onComplete(@NonNull Task<Void> task) {
 
-                                    decrementUserCoins(10000);
+                                    decrementUserCoins(20000);
 
                                     SweetAlertDialog pDialog = new SweetAlertDialog(getActivity(), SweetAlertDialog.SUCCESS_TYPE);
                                     pDialog.getProgressHelper().setBarColor(Color.parseColor("#A5DC86"));
@@ -216,7 +216,7 @@ public class WithDrawFragment extends Fragment {
                     if (!withdraw_phone_numberET.getText().toString().isEmpty()) {
 
                         assert user != null;
-                        if (user.getCoin() > 20000) {
+                        if (user.getCoin() > 40000) {
 
                             WithdrawModel withdrawModel = new WithdrawModel();
                             withdrawModel.setUid(FirebaseAuth.getInstance().getUid());
@@ -231,7 +231,7 @@ public class WithDrawFragment extends Fragment {
                                 @Override
                                 public void onComplete(@NonNull Task<Void> task) {
 
-                                    decrementUserCoins(20000);
+                                    decrementUserCoins(40000);
 
                                     SweetAlertDialog pDialog = new SweetAlertDialog(getActivity(), SweetAlertDialog.SUCCESS_TYPE);
                                     pDialog.getProgressHelper().setBarColor(Color.parseColor("#A5DC86"));
@@ -285,7 +285,7 @@ public class WithDrawFragment extends Fragment {
                     if (!withdraw_phone_numberET.getText().toString().isEmpty()) {
 
                         assert user != null;
-                        if (user.getCoin() > 40000) {
+                        if (user.getCoin() > 80000) {
 
                             WithdrawModel withdrawModel = new WithdrawModel();
                             withdrawModel.setUid(FirebaseAuth.getInstance().getUid());
@@ -302,7 +302,7 @@ public class WithDrawFragment extends Fragment {
                                 @Override
                                 public void onComplete(@NonNull Task<Void> task) {
 
-                                    decrementUserCoins(40000);
+                                    decrementUserCoins(80000);
 
                                     SweetAlertDialog pDialog = new SweetAlertDialog(getActivity(), SweetAlertDialog.SUCCESS_TYPE);
                                     pDialog.getProgressHelper().setBarColor(Color.parseColor("#A5DC86"));
