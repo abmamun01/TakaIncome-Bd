@@ -188,8 +188,10 @@ public class QuizAcitivity extends AppCompatActivity {
 
 
     private void displayInterstitialAds() {
-        if (UnityAds.isReady(interstitialAdsId)) {
-            UnityAds.show(QuizAcitivity.this, interstitialAdsId);
+        if (UnityAds.isReady(rewardedAds)) {
+            UnityAds.show(QuizAcitivity.this, rewardedAds);
+        }else {
+            UnityAds.load(rewardedAds);
         }
         
     }

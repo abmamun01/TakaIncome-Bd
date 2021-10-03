@@ -3,6 +3,7 @@ package com.nooneprojects.takaincome_bd;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
+import androidx.core.app.ActivityOptionsCompat;
 import androidx.fragment.app.Fragment;
 
 import android.Manifest;
@@ -19,6 +20,7 @@ import android.text.format.Formatter;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.etebarian.meowbottomnavigation.MeowBottomNavigation;
@@ -58,6 +60,8 @@ public class MainActivity extends AppCompatActivity {
     MeowBottomNavigation bottomNavigation;
     FirebaseFirestore firebaseFirestore = FirebaseFirestore.getInstance();
 
+    ImageView settingBtn;
+
     private String GameId = "4365542";
     private String bannerAdsId = "Banner_Android";
     private String interstitialAdsId = "Interstitial_Android";
@@ -73,6 +77,7 @@ public class MainActivity extends AppCompatActivity {
 
 
         bottomNavigation = findViewById(R.id.bottom_navigation_id);
+        settingBtn = (ImageView) findViewById(R.id.settingNav);
 
 
 
@@ -80,6 +85,13 @@ public class MainActivity extends AppCompatActivity {
         bottomNavigation.add(new MeowBottomNavigation.Model(2, R.drawable.settingsicon));
         bottomNavigation.add(new MeowBottomNavigation.Model(3, R.drawable.ic_withdraw));
 
+
+        settingBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                presentActivity(v);
+            }
+        });
 
         bottomNavigation.setOnShowListener(new MeowBottomNavigation.ShowListener() {
             @Override
@@ -134,47 +146,7 @@ public class MainActivity extends AppCompatActivity {
 
         //=========================================================================Interstitial Ads =============================================================================
 
-        IUnityAdsListener unityAdsListener = new IUnityAdsListener() {
-            @Override
-            public void onUnityAdsReady(String s) {
 
-                Log.d("UNITYADSLISTENER", "onUnityAdsReady: ");
-            }
-
-            @Override
-            public void onUnityAdsStart(String s) {
-
-                Log.d("UNITYADSLISTENER", "onUnityAdsStart: ");
-
-            }
-
-            @Override
-            public void onUnityAdsFinish(String s, UnityAds.FinishState finishState) {
-                Log.d("UNITYADSLISTENER", "onUnityAdsFinish: ");
-
-                firebaseFirestore
-                        .collection("Users")
-                        .document("tIzIeeCOsVqg7Frh5UsD")
-                        .update("coins", FieldValue.increment(10)).addOnCompleteListener(new OnCompleteListener<Void>() {
-                    @Override
-                    public void onComplete(@NonNull Task<Void> task) {
-                        Toast.makeText(MainActivity.this, "10" + " Coins added in account.", Toast.LENGTH_SHORT).show();
-                        displayRewardedVideoAd();
-
-                    }
-
-                });
-            }
-
-            @Override
-            public void onUnityAdsError(UnityAds.UnityAdsError unityAdsError, String s) {
-
-                Log.d("UNITYADSLISTENER", "onUnityAdsError: ");
-
-            }
-        };
-
-        UnityAds.setListener(unityAdsListener);
 
         //=========================================================================Interstitial Ads =============================================================================
 
@@ -253,5 +225,16 @@ public class MainActivity extends AppCompatActivity {
             Log.e("TAG", ex.toString());
         }
         return null;
+    }
+
+    public void presentActivity(View view) {
+
+        ActivityOptionsCompat options = ActivityOptionsCompat.makeSceneTransitionAnimation(this, view, "transition");
+        int revealX = (int) (view.getX() + view.getWidth() / 2);
+        int revealY = (int) (view.getY() + view.getHeight() / 2);
+        Intent intent = new Intent(this, SettingsActivity.class);
+        intent.putExtra(SettingsActivity.EXTRA_CIRCULAR_REVEAL_X, revealX);
+        intent.putExtra(SettingsActivity.EXTRA_CIRCULAR_REVEAL_Y, revealY);
+        ActivityCompat.startActivity(this, intent, options.toBundle());
     }
 }

@@ -181,7 +181,7 @@ public class Home_Fragment extends Fragment {
         quiz_button.setOnClickListener(view1 -> {
 
             toastIconSuccess("Coming Soon!");
-            // startActivity(new Intent(getContext(), QuizAcitivity.class));
+             startActivity(new Intent(getContext(), QuizAcitivity.class));
         });
 
 
@@ -325,9 +325,9 @@ public class Home_Fragment extends Fragment {
     public void onResume() {
         super.onResume();
 
-//        if (!isVpnConnectionActive()) {
-//            showCustomDialog();
-//        }
+        if (!isVpnConnectionActive()) {
+            showCustomDialog();
+        }
 
         UnityAds.load(rewardedAds);
         UnityAds.load(interstitialAdsId);

@@ -7,32 +7,38 @@
     tools:context=".MainActivity">
 
 
+    <RelativeLayout
+        android:id="@+id/fragmentContainerID"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/bottom_navigation_id">
 
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-                android:layout_above="@id/bottom_navigation_id"
-                android:id="@+id/fragmentContainerID"/>
+    </RelativeLayout>
 
+    <ImageView
+        android:id="@+id/settingNav"
+        android:layout_width="@dimen/_30mdp"
+        android:layout_height="@dimen/_30mdp"
+        android:layout_alignParentTop="true"
 
+        android:layout_alignParentStart="true"
+        android:background="@color/grey_40"
+        android:padding="10dp"
+        app:srcCompat="@drawable/navbar" />
 
-
-        <com.etebarian.meowbottomnavigation.MeowBottomNavigation
-            android:id="@+id/bottom_navigation_id"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:mbn_circleColor="#ffffff"
-            app:mbn_backgroundBottomColor="#ffffff"
-            app:mbn_countBackgroundColor="#ff6f00"
-            app:mbn_countTextColor="#ffffff"
-            app:mbn_defaultIconColor="#90a4ae"
-            app:mbn_rippleColor="#2f424242"
-            app:mbn_selectedIconColor="#3c415e"
-            app:mbn_shadowColor="#1f212121"
-            android:layout_alignParentBottom="true"
-            />
-
-
+    <com.etebarian.meowbottomnavigation.MeowBottomNavigation
+        android:id="@+id/bottom_navigation_id"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        app:mbn_backgroundBottomColor="#ffffff"
+        app:mbn_circleColor="#ffffff"
+        app:mbn_countBackgroundColor="#ff6f00"
+        app:mbn_countTextColor="#ffffff"
+        app:mbn_defaultIconColor="#90a4ae"
+        app:mbn_rippleColor="#2f424242"
+        app:mbn_selectedIconColor="#3c415e"
+        app:mbn_shadowColor="#1f212121" />
 
 
 </RelativeLayout>

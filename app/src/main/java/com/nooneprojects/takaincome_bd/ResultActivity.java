@@ -15,7 +15,7 @@ import com.google.firebase.firestore.FirebaseFirestore;
 
 public class ResultActivity extends AppCompatActivity {
 
-    int POINTS = 10;
+    int POINTS = 5;
     TextView scoreText, earnedCoinsText;
     Button restartBtn;
 
